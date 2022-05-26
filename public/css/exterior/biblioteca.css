@@ -1,0 +1,394 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: calibri;
+}
+
+body{
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 120%;
+    z-index: 0;
+    
+}
+
+/* COMIENZO MENU */
+header{
+    color: white;
+    width: 100%;
+    height: 160px;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    z-index:500;
+    background-image: url(../../img/interfaz_externa/biblioteca/fondo_biblioteca.png);
+    background-size: cover ;
+    background-repeat: no-repeat;
+    background-position:100%;
+}
+
+header img{
+    margin-left: 8%;
+    display: inline;
+    width: 90px;
+    margin-top: 20px;
+    float: left; 
+    object-fit: cover;
+}
+
+header h1{
+    font-size: 50px;
+    color: white;
+    line-height: 70px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-left: 20px;
+    padding-left: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    border-left: 5px solid #FFC215;
+    font-family:'Franklin Gothic Medium';
+}
+
+header h1{
+    color:white;
+}
+
+header nav{
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    text-align: right;
+    padding-right: 50px;
+}
+
+header nav a{
+    color: white;
+    font-weight: 600;
+    display: inline-block;
+    padding: 13px 20px;
+    margin-right: -5px;
+    text-decoration: none;
+}
+
+header nav a:hover{
+    color: black;
+    background-color: white;
+    border-bottom: 4px solid #FFC215;
+    border-radius: 15px;
+}
+
+span{
+    color: #FFC215;
+}
+
+/*INICIO DE CAJAS LIBROS*/
+
+.contenedor1{
+    
+    position:relative;
+    height: 30em;
+    width: 100%;
+    margin-top: 11em;
+    
+}
+
+.contenedor2{
+    position: relative;
+    height: 30em;
+    width: 100%;
+    margin-top: 1%;
+}
+
+.contenedor_cajas h1{
+    text-align: center;
+    margin-top: .3em;
+    background-color: black;
+    color:#FFC215;
+}
+
+.contenedor_cajas .caja{
+    height: 25em;
+    width: 17em;
+    background-color: black;
+    position:absolute;
+    display: inline-block;
+    margin-left:.5em;
+    margin-top:2em;
+    transition: width .1s;
+}
+.contenedor_cajas .caja h2{
+    text-align: center;
+    color: white;
+    display:none;
+    
+}
+
+.contenedor_cajas .caja p{
+    display: none;
+    color: white;
+    margin-left: 2em;
+    margin-right: 2em;
+    font-size: 1.2em;
+    position: absolute;
+   
+}
+
+
+
+.contenedor_cajas .caja img{
+    width: 92%;
+    height: 96%;
+    margin-left: 4%;
+    margin-top: .4em;
+
+
+}
+
+.caja1{
+ left: 4%;
+}
+
+.caja2{
+    left: 28%;
+}
+
+.caja3{
+    left: 52%;
+}
+
+.caja4{
+    left: 75%;
+}
+
+
+
+.caja5{
+    left: 4%;
+   }
+   
+   .caja6{
+       left: 28%;
+   }
+   
+   .caja7{
+       left: 52%;
+   }
+   
+   .caja8{
+       left: 75%;
+   }
+   
+
+
+
+
+
+
+
+
+.container_cajas{
+    position: absolute;
+    height: 25.1em;
+    width: 92%;
+    top: 14.5%;
+    left: 4%;
+    transform: translatex(-120%);
+    background: black;
+    transition: transform .4s ease-in;
+    
+}
+
+.container_cajas_abajo {
+    position: absolute;
+    height: 25.2em;
+    width: 92%;
+    top: 6.5%;
+    left: 4%;
+    transform: translatex(-120%);
+    background: black;
+    transition: transform .4s ease-in;
+}
+
+.move{
+    transform: translateX(0);
+}
+
+
+
+
+ .caja-img{
+    height: 95%;
+    top: 2.5%;
+    left: 0.7%;
+    position: absolute;
+    object-fit: cover;
+    z-index: 9000;
+    transition: transform .2s .4s;
+    background: red;
+}
+
+.titulo_libro{
+    color: white;
+    text-align: center;
+    margin-top: .1em;
+}
+
+.copy{
+    color: white;
+    position: relative;
+    border: 1px solid #FFC215;
+    margin-left: 25%;
+    width: 65%;
+    margin-top: 1%;
+    font-size: 1.2em;
+    padding: 2%;
+
+}
+
+.autor{
+    color: white;
+    font-size: 1em;
+    text-align: center;
+    margin-top: .5em;
+    
+}
+
+.boton_leer{
+    position:absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #FFC215;
+    color: black;
+    padding: 5px;
+    margin:3%;
+    text-decoration:none;
+    transition: .5s all;
+    border-radius: 3px;
+}
+.boton_leer:hover{
+    color: white;
+    background-color: #FF9700;
+}
+
+.bx.bx-x{
+    position: absolute;
+    color: #fff;
+    top: 10px;
+    right: 10px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* FIN MENU */
+
+/* CONTENDOR DE TODO 
+.contenedor_mayor{
+    height: auto;
+    width: 98%;
+    margin-left: 0.5em;
+    margin-top: 10em;
+    padding: 15px;
+    border-radius: 1em;
+}
+/* CONTENEDOR DE ARCHIVO Y AUTOR 
+.targeta{
+    margin-bottom: 1em;
+    width:75em;
+    height: 17em;
+}
+/* CONTENEDOR ARCHIVO 
+.container_document{
+    height: 100%;
+    width:80%;
+    overflow: auto;
+    float: left;
+    border-radius: 1em;  
+    background-color: white;
+}
+
+.portada_doc{
+    width: 10em;
+    height: 13em;
+    float: left;
+    padding: 10px;
+    border-radius:10%;
+}
+.titulo{
+    margin-top: .3em;
+    text-align: left;
+    color: black;
+    font-weight: bold;
+    width: 40%;
+}
+.descripcion{
+    padding: 10px;
+    width: 90%;
+}
+.paginas{
+    width: 30%;
+    padding-top: 10px;
+    margin-left: 10em;
+    padding-bottom: 10px;
+}
+.btn_documento{
+    text-align: center;
+    display: inline-block;
+    background-color: #FFC215;
+    padding: 10px 70px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin: 10px 380px;
+   
+}
+.btn_documento:hover{
+    background-color: #e4b126;
+
+}
+/* fin contenedoR
+
+ CONTENEDOR AUTORES 
+.container_autores{
+    width: 25%;
+    height: 25%;
+    margin-top: 1em;
+    overflow: auto;
+    position: absolute;
+    min-height: 13em;
+    background-color: white;
+    display: inline-block;
+    margin-left: 0.5em;
+    padding: 1em;
+    border-radius: 1em;
+}
+
+.img_autor{
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    float: left;
+    margin-right: 0.8em;
+}
+.container_autores h2{
+    padding: 0.5em;
+    color: black;
+}
+.nom_autor{
+    margin: 0.8em;
+} */
+
