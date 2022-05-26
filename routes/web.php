@@ -28,6 +28,13 @@ Route::get('exterior/eventos', function(){
 Route::get('exterior/galeria', function(){
     return view('exterior/galeria');
 });
+
 Route::get('exterior/biblioteca', function(){
     return view('exterior/biblioteca');
 });
+
+Route::get('exterior/login', function(){
+    return view('exterior/login');
+});
+
+Route::get('/Inicio',LoginController::class);
