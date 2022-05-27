@@ -37,4 +37,4 @@ Route::get('exterior/login', function(){
     return view('exterior/login');
 });
 
-Route::get('/Inicio',LoginController::class);
+/* Route::get('/Inicio',LoginController::class); */
