@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,11 +34,13 @@ Route::get('exterior/biblioteca', function(){
     return view('exterior/biblioteca');
 });
 
-Route::get('exterior/login1', function(){
+Route::get('exterior/login', function(){
     return view('exterior/login');
 });
 
-/* Route::get('/Inicio',LoginController::class); */
+Route::controller(UserController::class)->group(function(){
+    Route::post('register','create')->name('registrar');
+});
 
 Auth::routes();
 
