@@ -14,12 +14,12 @@
         <img src="../img/logos/logotipo3.png" alt="Logo Kinesfera">
         <h1>Kinesfera Lab</h1>
         <nav>
-            <a href="../../index.php">Inicio</a>
-            <a href="noticias.html">Noticias</a>
-            <a href="eventos.html">Eventos</a>
-            <a href="minibiblioteca.html">Biblioteca</a>
-            <a href="galeria.html">Galeria</a>
-            <a href="login.html">Ingresar</a>
+                 <a href="{{url('../')}}">Inicio</a>
+                <a href="{{url('exterior/noticias')}}">Noticias</a>
+                <a href="{{url('exterior/eventos')}}">Eventos</a>
+                <a href="{{url('exterior/biblioteca')}}">Biblioteca</a>
+                <a href="{{url('exterior/galeria')}}">Galeria</a>
+                <a href="{{url('exterior/login')}}">Ingresar</a>
         </nav>
     </header> <br>
 
