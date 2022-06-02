@@ -33,8 +33,12 @@ Route::get('exterior/biblioteca', function(){
     return view('exterior/biblioteca');
 });
 
-Route::get('exterior/login', function(){
+Route::get('exterior/login1', function(){
     return view('exterior/login');
 });
 
 /* Route::get('/Inicio',LoginController::class); */
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
