@@ -24,6 +24,12 @@
     </header> <br>
 
     <div id="login-form" class="login-page">
+        @if($errors->any)
+        @foreach ($errors->all() as $err )
+        <p class="alert" >{{$err}}</p>
+        @endforeach
+        @endif
+
         <div class="form-box">
 
             <div class="button-box">
@@ -36,29 +42,21 @@
                 <h2 class="titulo_login">Inicio de Sesion</h2>
                 <input type="email" name="correo" class="input-field" placeholder="Correo Electronico" required>
                 <input type="password" name="contra" class="input-field" placeholder="Contraseña" required>
-                <!-- <label for="cargo" class="input-cargo">Cargo: </label>
-                <select name="cargo" id="cargo" class="input-cargo-options">
-                    <option>Seleccionar</option>
-                    <option value="3">Aprendiz</option>
-                    <option value="2">Formador</option>
-                    <option value="1">Administrador</option>
-                </select> -->
                 <button type="submit" name="btn_ingresar" class="submit-btn" >Iniciar Sesion</button>
             </form>
 
             <!--registrar-->
-            <form id="register" class="input-group-register" action="{{url('register')}}">
+            <form id="register" class="input-group-register" action="{{ route('register.action')}}">
                 <h2 class="titulo_register">Registrar</h2>
-                <input type="text" class="input-field" name="Nombres" placeholder="Nombres" required>
-                <input type="text" class="input-field" name="Apellidos" placeholder="Apellidos" required>
-                <input type="number" class="input-field" name="edad" placeholder="Edad" required>
-                <input type="number" class="input-field" name="n_tel"  placeholder="Numero de telefono" required>
-                <input type="email" class="input-field" name="email" placeholder="Correo Electronico" required>
-                <!-- <input type="text" class="input-field" name="n_usuario" placeholder="Nombre de usuario" required> -->
-                <input type="password" class="input-field" name="contra" placeholder="contraseña" required>
-                <input type="password" class="input-field" name="c_contra" placeholder="Confimar Contraseña" required>
-                <input type="number" name="cargo" value="4" hidden>
-                <input type="text" name="estado" value="Activo" hidden>
+                <input type="text" class="input-field" name="nombres_usuario" placeholder="Nombres" required>
+                <input type="text" class="input-field" name="apellidos_usuario" placeholder="Apellidos" required>
+                <input type="number" class="input-field" name="edad_usuario" placeholder="Edad" required>
+                <input type="number" class="input-field" name="telefono_usuario"  placeholder="Numero de telefono" required>
+                <input type="email" class="input-field" name="correo_usuario" placeholder="Correo Electronico" required>
+                <input type="password" class="input-field" name="clave_usuario" placeholder="contraseña" required>
+                <input type="password" class="input-field" name="clave_usuario_confirm" placeholder="Confimar Contraseña" required>
+                <input type="number" name="id_cargo_usuario" value="4" hidden>
+                <input type="text" name="estado_usurio" value="Activo" hidden>
                 <input type="submit" class="submit-btn" name="btn_registro">
             </form>
         </div>
