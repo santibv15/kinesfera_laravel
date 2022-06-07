@@ -34,6 +34,7 @@ Route::get('exterior/biblioteca', function(){
     return view('exterior/biblioteca');
 });
 
+
 /* Route::get('exterior/login', function(){
     return view('exterior/login');
 }); */

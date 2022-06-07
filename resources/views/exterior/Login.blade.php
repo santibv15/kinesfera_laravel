@@ -14,21 +14,21 @@
         <img src="../img/logos/logotipo3.png" alt="Logo Kinesfera">
         <h1>Kinesfera Lab</h1>
         <nav>
-            <a href="../../index.php">Inicio</a>
-            <a href="noticias.html">Noticias</a>
-            <a href="eventos.html">Eventos</a>
-            <a href="minibiblioteca.html">Biblioteca</a>
-            <a href="galeria.html">Galeria</a>
-            <a href="login.html">Ingresar</a>
+            <a href="{{url('../')}}">Inicio</a>
+            <a href="{{url('exterior/noticias')}}">Noticias</a>
+            <a href="{{url('exterior/eventos')}}">Eventos</a>
+            <a href="{{url('exterior/biblioteca')}}">Biblioteca</a>
+            <a href="{{url('exterior/galeria')}}">Galeria</a>
+            <a href="{{url('exterior/login')}}">Ingresar</a>
         </nav>
+        @if($errors->any)
+        @foreach ($errors->all() as $err )
+        <p class="alert alert-danger" >{{$err}}</p>
+        @endforeach
+        @endif
     </header> <br>
 
     <div id="login-form" class="login-page">
-        @if($errors->any)
-        @foreach ($errors->all() as $err )
-        <p class="alert" >{{$err}}</p>
-        @endforeach
-        @endif
 
         <div class="form-box">
 
@@ -48,15 +48,15 @@
             <!--registrar-->
             <form id="register" class="input-group-register" action="{{ route('register.action')}}">
                 <h2 class="titulo_register">Registrar</h2>
-                <input type="text" class="input-field" name="nombres_usuario" placeholder="Nombres" required>
-                <input type="text" class="input-field" name="apellidos_usuario" placeholder="Apellidos" required>
-                <input type="number" class="input-field" name="edad_usuario" placeholder="Edad" required>
-                <input type="number" class="input-field" name="telefono_usuario"  placeholder="Numero de telefono" required>
-                <input type="email" class="input-field" name="correo_usuario" placeholder="Correo Electronico" required>
-                <input type="password" class="input-field" name="clave_usuario" placeholder="contraseña" required>
-                <input type="password" class="input-field" name="clave_usuario_confirm" placeholder="Confimar Contraseña" required>
+                <input type="text" class="input-field" name="nombres_usuario" placeholder="Nombres">
+                <input type="text" class="input-field" name="apellidos_usuario" placeholder="Apellidos">
+                <input type="number" class="input-field" name="edad_usuario" placeholder="Edad">
+                <input type="number" class="input-field" name="telefono_usuario"  placeholder="Numero de telefono">
+                <input type="email" class="input-field" name="correo_usuario" placeholder="Correo Electronico">
+                <input type="password" class="input-field" name="clave_usuario" placeholder="contraseña">
+                <input type="password" class="input-field" name="clave_usuario_confirm" placeholder="Confimar Contraseña">
                 <input type="number" name="id_cargo_usuario" value="4" hidden>
-                <input type="text" name="estado_usurio" value="Activo" hidden>
+                <input type="text" name="estado_usuario" value="Activo" hidden>
                 <input type="submit" class="submit-btn" name="btn_registro">
             </form>
         </div>

@@ -25,7 +25,7 @@ class UserController extends Controller
             'clave_usuario' => 'required',
             'clave_usuario_confirm' => 'required|same:clave_usuario',
             'id_cargo_usuario' => 'required',
-            'estado_usurio' => 'required'
+            'estado_usuario' => 'required'
         ]);
         $newUser= new User([
             'nombres_usuario' => $request->nombres_usuario,
@@ -33,9 +33,9 @@ class UserController extends Controller
             'edad_usuario' => $request->edad_usuario,
             'telefono_usuario' => $request->telefono_usuario,
             'correo_usuario' =>$request->correo_usuario,
-            'clave_usuario' => Hash::make($request->correo_usuario),
+            'clave_usuario' => $request->clave_usuario,
             'id_cargo_usuario' => $request->id_cargo_usuario,
-            'estado_usurio' => $request->estado_usurio
+            'estado_usuario' => $request->estado_usuario
         ]);
 
         $newUser->save();
