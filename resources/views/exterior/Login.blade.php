@@ -38,7 +38,7 @@
                 <button type="button" onclick="register()" class="toggle-btn">Registrarse</button>
             </div>
             <!--iniciar sesion-->
-            <form id="login" class="input-group-login" action="" method="POST">
+            <form id="login" class="input-group-login" action="">
                 <h2 class="titulo_login">Inicio de Sesion</h2>
                 <input type="email" name="correo" class="input-field" placeholder="Correo Electronico" required>
                 <input type="password" name="contra" class="input-field" placeholder="Contraseña" required>
@@ -46,7 +46,8 @@
             </form>
 
             <!--registrar-->
-            <form id="register" class="input-group-register" action="{{ route('register.action')}}">
+            <form id="register" method="post" class="input-group-register" action="{{ route('register.inicio')}}">
+                @csrf
                 <h2 class="titulo_register">Registrar</h2>
                 <input type="text" class="input-field" name="nombres_usuario" placeholder="Nombres">
                 <input type="text" class="input-field" name="apellidos_usuario" placeholder="Apellidos">
@@ -57,7 +58,7 @@
                 <input type="password" class="input-field" name="clave_usuario_confirm" placeholder="Confimar Contraseña">
                 <input type="number" name="id_cargo_usuario" value="4" hidden>
                 <input type="text" name="estado_usuario" value="Activo" hidden>
-                <input type="submit" class="submit-btn" name="btn_registro">
+                <button type="submit" name="btn_registro" class="submit-btn" >Registrarse</button>
             </form>
         </div>
     </div>

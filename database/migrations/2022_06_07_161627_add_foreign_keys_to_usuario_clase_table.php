@@ -14,7 +14,7 @@ class AddForeignKeysToUsuarioClaseTable extends Migration
     public function up()
     {
         Schema::table('usuario_clase', function (Blueprint $table) {
-            $table->foreign(['USUARIO_ID'], 'usuario_clase_ibfk_1')->references(['ID_USUARIO'])->on('usuario');
+            $table->foreign(['USUARIO_ID'], 'usuario_clase_ibfk_1')->references(['ID_USUARIO'])->on('users');
             $table->foreign(['CLASE_ID'], 'usuario_clase_ibfk_2')->references(['ID_CLASE'])->on('clase');
         });
     }

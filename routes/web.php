@@ -35,18 +35,9 @@ Route::get('exterior/biblioteca', function(){
 });
 
 
-/* Route::get('exterior/login', function(){
-    return view('exterior/login');
-}); */
 
 Route::get('exterior/login',[UserController::class, 'register'])->name('register');
 Route::post('exterior/login',[UserController::class, 'register_action'])->name('register.action');
-/*
-Route::controller(UserController::class)->group(function(){
-    Route::post('register','create')->name('registrar');
-});
+Route::post('exterior/login',[UserController::class, 'register_inicio'])->name('register.inicio');
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
- */
+?>

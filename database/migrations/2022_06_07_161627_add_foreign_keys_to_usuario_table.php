@@ -13,7 +13,7 @@ class AddForeignKeysToUsuarioTable extends Migration
      */
     public function up()
     {
-        Schema::table('usuario', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             $table->foreign(['ID_CARGO_USUARIO'], 'usuario_ibfk_1')->references(['ID_CARGO'])->on('cargo');
         });
     }

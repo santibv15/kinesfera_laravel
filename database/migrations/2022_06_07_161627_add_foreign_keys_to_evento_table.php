@@ -14,7 +14,7 @@ class AddForeignKeysToEventoTable extends Migration
     public function up()
     {
         Schema::table('evento', function (Blueprint $table) {
-            $table->foreign(['ID_USUARIO_EVENTO'], 'evento_ibfk_1')->references(['ID_USUARIO'])->on('usuario');
+            $table->foreign(['ID_USUARIO_EVENTO'], 'evento_ibfk_1')->references(['ID_USUARIO'])->on('users');
         });
     }
 

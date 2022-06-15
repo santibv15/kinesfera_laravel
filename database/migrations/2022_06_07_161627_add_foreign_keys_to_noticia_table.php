@@ -14,7 +14,7 @@ class AddForeignKeysToNoticiaTable extends Migration
     public function up()
     {
         Schema::table('noticia', function (Blueprint $table) {
-            $table->foreign(['ID_USUARIO_NOTICIA'], 'noticia_ibfk_1')->references(['ID_USUARIO'])->on('usuario');
+            $table->foreign(['ID_USUARIO_NOTICIA'], 'noticia_ibfk_1')->references(['ID_USUARIO'])->on('users');
         });
     }
 

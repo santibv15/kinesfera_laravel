@@ -14,7 +14,7 @@ class AddForeignKeysToPublicacionTable extends Migration
     public function up()
     {
         Schema::table('publicacion', function (Blueprint $table) {
-            $table->foreign(['ID_USUARIO_PUBLIC'], 'publicacion_ibfk_1')->references(['ID_USUARIO'])->on('usuario');
+            $table->foreign(['ID_USUARIO_PUBLIC'], 'publicacion_ibfk_1')->references(['ID_USUARIO'])->on('users');
         });
     }
 

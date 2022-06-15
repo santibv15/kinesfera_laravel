@@ -15,7 +15,7 @@ class AddForeignKeysToImagenesTable extends Migration
     {
         Schema::table('imagenes', function (Blueprint $table) {
             $table->foreign(['ID_CLASE_IMAGEN'], 'imagenes_ibfk_1')->references(['ID_CLASE'])->on('clase');
-            $table->foreign(['ID_USUARIO_IMAGEN'], 'imagenes_ibfk_3')->references(['ID_USUARIO'])->on('usuario');
+            $table->foreign(['ID_USUARIO_IMAGEN'], 'imagenes_ibfk_3')->references(['ID_USUARIO'])->on('users');
             $table->foreign(['ID_REPOSITORIO_IMAGEN'], 'imagenes_ibfk_2')->references(['ID_REPOSITORIO'])->on('repositorio');
         });
     }

@@ -2,26 +2,26 @@
 
 namespace App\Http\Controllers;
 
-/* use App\Http\Controllers\Controller;*/
+use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
+
 
 class UserController extends Controller
 {
     public function register(){
-
         $data['title']='register';
-        return view('exterior.login',$data);
+        return view('exterior.login',compact('data'));
 
-    }
+    } 
 
-    public function register_action(Request $request){
-
-        $request->validate([
+    public function register_inicio(Request $request){
+         $request->validate([
             'nombres_usuario' => 'required',
             'apellidos_usuario' => 'required',
             'edad_usuario' => 'required',
             'telefono_usuario' => 'required',
-            'correo_usuario' => 'required|unique:usuario',
+            'correo_usuario' => 'required|unique:users',
             'clave_usuario' => 'required',
             'clave_usuario_confirm' => 'required|same:clave_usuario',
             'id_cargo_usuario' => 'required',
@@ -40,15 +40,16 @@ class UserController extends Controller
 
         $newUser->save();
         return redirect()->route('login')->with('success','Registration Success. Plis Login!');
+    }
+
+    public function register_action(){
+
+        return "Hello world";
+
 
     }
 
 
 
-    /* public function register(){
-
-        $data['title']='register';
-        return view('exterior.login',compact('data'));
-
-    } */
+   
 }
