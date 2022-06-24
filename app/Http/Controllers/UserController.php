@@ -13,7 +13,7 @@ class UserController extends Controller
         $data['title']='register';
         return view('exterior.login',compact('data'));
 
-    } 
+    }
 
     public function register_inicio(Request $request){
          $request->validate([
@@ -51,5 +51,5 @@ class UserController extends Controller
 
 
 
-   
+
 }

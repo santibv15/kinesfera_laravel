@@ -23,6 +23,8 @@ class CreateUsuarioTable extends Migration
             $table->string('CLAVE_USUARIO', 101);
             $table->integer('ID_CARGO_USUARIO')->index('ID_CARGO_USUARIO');
             $table->string('ESTADO_USUARIO', 20);
+            $table->dateTime('UPDATED_AT');
+            $table->dateTime('CREATED_AT');
         });
     }
 
@@ -33,6 +35,6 @@ class CreateUsuarioTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('usuario');
+        Schema::dropIfExists('users');
     }
 }
