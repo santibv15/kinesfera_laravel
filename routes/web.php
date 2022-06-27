@@ -34,10 +34,14 @@ Route::get('exterior/biblioteca', function(){
     return view('exterior/biblioteca');
 });
 
+Auth::routes();
 
+Route::get('exterior/login',[UserController::class, 'register'])->name('login');
+Route::post('exterior/login/action',[UserController::class, 'register_action'])->name('register.action');
+Route::post('exterior/login/action',[UserController::class, 'register_inicio'])->name('register.inicio');
 
-Route::get('exterior/login',[UserController::class, 'register'])->name('register');
-Route::post('exterior/login',[UserController::class, 'register_action'])->name('register.action');
-Route::post('exterior/login',[UserController::class, 'register_inicio'])->name('register.inicio');
+Route::post('exterior/login',[UserController::class, 'login_inicio'])->name('login.inicio');
+Route::get('interior/pricipal',[UserController::class, 'principal'])->name('inicio_interno');
+
 
 ?>

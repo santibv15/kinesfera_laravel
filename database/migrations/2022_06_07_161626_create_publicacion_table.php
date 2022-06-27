@@ -20,7 +20,7 @@ class CreatePublicacionTable extends Migration
             $table->string('ARCHIVO_PUBLIC', 1000);
             $table->date('FECHA_PUBLIC');
             $table->time('HORA_PUBLIC');
-            $table->integer('ID_USUARIO_PUBLIC')->index('ID_USUARIO_PUBLIC');
+            $table->unsignedBigInteger('ID_USUARIO_PUBLIC')->index('ID_USUARIO_PUBLIC');
         });
     }
 

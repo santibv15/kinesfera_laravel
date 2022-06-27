@@ -20,6 +20,12 @@
             <a href="{{url('exterior/galeria')}}">Galeria</a>
             <a href="{{url('exterior/login')}}">Ingresar</a>
         </nav>
+
+        @if (session('success'))
+        <p class="alert alert-danger" >{{session('success')}}</p>
+
+        @endif
+
         @if($errors->any)
         @foreach ($errors->all() as $err )
         <p class="alert alert-danger" >{{$err}}</p>
@@ -37,10 +43,11 @@
                 <button type="button" onclick="register()" class="toggle-btn">Registrarse</button>
             </div>
             <!--iniciar sesion-->
-            <form id="login" class="input-group-login" action="">
+            <form id="login" method="POST" class="input-group-login" action="{{ route('login.inicio')}}">
+                @csrf
                 <h2 class="titulo_login">Inicio de Sesion</h2>
-                <input type="email" name="correo" class="input-field" placeholder="Correo Electronico" required>
-                <input type="password" name="contra" class="input-field" placeholder="Contraseña" required>
+                <input type="email" name="correo_usuario" class="input-field" placeholder="Correo Electronico" required>
+                <input type="password" name="clave_usuario" class="input-field" placeholder="Contraseña" required>
                 <button type="submit" name="btn_ingresar" class="submit-btn" >Iniciar Sesion</button>
             </form>
 
@@ -55,7 +62,7 @@
                 <input type="email" class="input-field" name="correo_usuario" placeholder="Correo Electronico">
                 <input type="password" class="input-field" name="clave_usuario" placeholder="contraseña">
                 <input type="password" class="input-field" name="clave_usuario_confirm" placeholder="Confimar Contraseña">
-                <input type="number" name="id_cargo_usuario" value="4" hidden>
+                {{-- <input type="number" name="id_cargo_usuario" value="4" hidden> --}}
                 <input type="text" name="estado_usuario" value="Activo" hidden>
                 <button type="submit" name="btn_registro" class="submit-btn" >Registrarse</button>
             </form>

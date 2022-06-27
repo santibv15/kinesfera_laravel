@@ -15,7 +15,7 @@ class CreateUsuarioClaseTable extends Migration
     {
         Schema::create('usuario_clase', function (Blueprint $table) {
             $table->integer('ID_USUARIO_CARGO', true);
-            $table->integer('USUARIO_ID')->index('USUARIO_ID');
+            $table->unsignedBigInteger('USUARIO_ID')->index('USUARIO_ID');
             $table->integer('CLASE_ID')->index('CLASE_ID');
         });
     }

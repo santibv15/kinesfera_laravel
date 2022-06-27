@@ -20,7 +20,7 @@ class CreateImagenesTable extends Migration
             $table->string('ARCHIVO_IMAGEN', 1000);
             $table->integer('ID_CLASE_IMAGEN')->index('ID_CLASE_IMAGEN');
             $table->integer('ID_REPOSITORIO_IMAGEN')->index('ID_REPOSITORIO_IMAGEN');
-            $table->integer('ID_USUARIO_IMAGEN')->index('ID_USUARIO_IMAGEN');
+            $table->unsignedBigInteger('ID_USUARIO_IMAGEN')->index('ID_USUARIO_IMAGEN');
         });
     }
 

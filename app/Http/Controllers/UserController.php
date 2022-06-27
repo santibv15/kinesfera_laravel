@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
@@ -24,28 +25,44 @@ class UserController extends Controller
             'correo_usuario' => 'required|unique:users',
             'clave_usuario' => 'required',
             'clave_usuario_confirm' => 'required|same:clave_usuario',
-            'id_cargo_usuario' => 'required',
+          /*   'id_cargo_usuario' => 'required', */
             'estado_usuario' => 'required'
         ]);
+
         $newUser= new User([
-            'nombres_usuario' => $request->nombres_usuario,
-            'apellidos_usuario' => $request->apellidos_usuario,
-            'edad_usuario' => $request->edad_usuario,
-            'telefono_usuario' => $request->telefono_usuario,
-            'correo_usuario' =>$request->correo_usuario,
-            'clave_usuario' => $request->clave_usuario,
-            'id_cargo_usuario' => $request->id_cargo_usuario,
-            'estado_usuario' => $request->estado_usuario
+            'NOMBRES_USUARIO' => $request->nombres_usuario,
+            'APELLIDOS_USUARIO' => $request->apellidos_usuario,
+            'EDAD_USUARIO' => $request->edad_usuario,
+            'TELEFONO_USUARIO' => $request->telefono_usuario,
+            'CORREO_USUARIO' =>$request->correo_usuario,
+            'CLAVE_USUARIO' => $request->clave_usuario,
+           /*  'ID_CARGO_USUARIO' => $request->id_cargo_usuario, */
+            'ESTADO_USUARIO' => $request->estado_usuario
         ]);
 
         $newUser->save();
-        return redirect()->route('login')->with('success','Registration Success. Plis Login!');
+        return redirect()->route('login')->with('success','Registro exitoso');
     }
+
+    public function login_inicio(Request $request){
+        $request->validate([
+           'correo_usuario' => 'required',
+           'clave_usuario' => 'required',
+       ]);
+
+       $credentials = $request->only('CORREO_USUARIO', 'CLAVE_USUARIO');
+
+       if (Auth::attempt($credentials)) {
+           // Authentication passed...
+           return redirect()->intended('inicio_interno');
+       }
+
+       return back()->withErrors('pasword','Has ingresado mal el usuario o contraseña');
+   }
 
     public function register_action(){
 
         return "Hello world";
-
 
     }
 
@@ -53,3 +70,34 @@ class UserController extends Controller
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Hola profes que sepan que no los quiero volver a ver

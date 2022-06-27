@@ -18,7 +18,7 @@ class CreateNoticiaTable extends Migration
             $table->string('TITULO_NOTICIA', 80);
             $table->string('DESCRIPCION_NOTICIA', 300);
             $table->string('IMAGEN_NOTICIA', 1000);
-            $table->integer('ID_USUARIO_NOTICIA')->index('ID_USUARIO_NOTICIA');
+            $table->unsignedBigInteger('ID_USUARIO_NOTICIA')->index('ID_USUARIO_NOTICIA');
         });
     }
 

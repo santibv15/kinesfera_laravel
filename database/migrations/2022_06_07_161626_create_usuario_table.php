@@ -14,17 +14,16 @@ class CreateUsuarioTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->integer('ID_USUARIO', true);
+            $table->id('ID_USUARIO');
             $table->string('NOMBRES_USUARIO', 50);
             $table->string('APELLIDOS_USUARIO', 80);
             $table->integer('EDAD_USUARIO');
             $table->integer('TELEFONO_USUARIO');
             $table->string('CORREO_USUARIO', 70)->nullable();
             $table->string('CLAVE_USUARIO', 101);
-            $table->integer('ID_CARGO_USUARIO')->index('ID_CARGO_USUARIO');
+            /* $table->integer('ID_CARGO_USUARIO')->index('ID_CARGO_USUARIO')->nullable); */
             $table->string('ESTADO_USUARIO', 20);
-            $table->dateTime('UPDATED_AT');
-            $table->dateTime('CREATED_AT');
+            $table->timestamps();
         });
     }
 

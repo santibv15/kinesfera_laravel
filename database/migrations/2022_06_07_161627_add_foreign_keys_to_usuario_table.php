@@ -14,7 +14,7 @@ class AddForeignKeysToUsuarioTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->foreign(['ID_CARGO_USUARIO'], 'usuario_ibfk_1')->references(['ID_CARGO'])->on('cargo');
+            /* $table->foreign(['ID_CARGO_USUARIO'], 'usuario_ibfk_1')->references(['ID_CARGO'])->on('cargo'); */
         });
     }
 
@@ -25,7 +25,7 @@ class AddForeignKeysToUsuarioTable extends Migration
      */
     public function down()
     {
-        Schema::table('usuario', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             $table->dropForeign('usuario_ibfk_1');
         });
     }

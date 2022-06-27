@@ -22,7 +22,7 @@ class CreateEventoTable extends Migration
             $table->date('FECHA_EVENTO');
             $table->decimal('COSTO_EVENTO', 10, 0);
             $table->string('IMAGEN_EVENTO', 1000);
-            $table->integer('ID_USUARIO_EVENTO')->index('ID_USUARIO_EVENTO');
+            $table->unsignedBigInteger('ID_USUARIO_EVENTO')->index('ID_USUARIO_EVENTO');
         });
     }
 
